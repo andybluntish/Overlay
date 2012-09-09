@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <title>Overlay</title>
+  <link href="http://necolas.github.com/normalize.css/2.0.1/normalize.css" rel="stylesheet">
+  <link href="jquery.overlay.css" rel="stylesheet">
+  <style>
+    body { padding: 1em; }
+    img { max-width: 100%; }
+  </style>
+</head>
+<body>
+
+  <a href="http://placehold.it/1024x768" rel="overlay" title="Image title">
+    <img src="http://placehold.it/400x300" alt="Image">
+  </a>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script src="jquery.overlay.js"></script>
+  <script>
+    $('a').overlay();
+  </script>
+
+</body>
+</html>
