@@ -55,7 +55,7 @@
         # Open the overlay window
         $( document ).on 'click', "#{@selector}:not(.#{@options.classes.close})", (e) ->
           e.preventDefault()
-          t.open $(this).attr('href')
+          t.open $(this)
 
         # Close the overlay window
         $(".#{this.options.classes.close}").on 'click', (e) ->
@@ -77,9 +77,9 @@
         @markup.caption   = $(".#{@options.classes.caption}", @markup.container)
 
 
-    open: (url) ->
-      @markup.content.html $('<img />', src: url, alt: '', id: @options.fullResImageId )
-      @markup.caption.html $(@element).attr( @options.captionAttribute )
+    open: (el) ->
+      @markup.content.html $('<img />', src: el.attr('href'), alt: '', id: @options.fullResImageId )
+      @markup.caption.html el.attr( @options.captionAttribute )
       @markup.overlay.height( $(document).height() ).fadeIn @options.duration
       @markup.wrapper.css( top: $(document).scrollTop() ).fadeIn @options.duration
       @options.onOpen()
